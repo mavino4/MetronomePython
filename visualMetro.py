@@ -118,15 +118,24 @@ def cancion(file, li = 1, ls =100):
 
 
 
-cancion("test.txt",2,3)
+
+cancion("El naufrago.txt",4)
 
 
 """
-# Cada sección de la cancion tendrá los siguientes parámetros
+### Cada sección de la cancion tendrá los siguientes parámetros
 Metronome = (bpm, time_sig,loops, name, color)
 bpm= beats por minuto
 metrica = contedo de cuandos golpes hay por compas 
 compaces = Número de compases para cada sección
 nombre = Nombre de la sección para que aparezca en la pantalla
 color = color de la pantalla
+
+# Adicionalmente si es que necesitas una sección que cambie de velocidad, 
+puede añadir 2 parametros al final
+
+change, FSpeed 
+
+change = Puede tomar 2 valores, "acelerate" o "decrease", para acelerar o disminuir la velocidad respectivamente
+FSpeed = Es la velocidad final a la que se quiere llegar una vez terminada la transición 
 """

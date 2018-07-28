@@ -6,8 +6,12 @@
 140, 4, 16,PUENTE SOLO, 0 
 140, 4, 16,VERSO, 4 
 140, 4, 16,CORO, 5 
-140, 4, 32,Pseudo Final, 2 
+140, 4, 2,Silencio, 0 
+140, 4, 8,Pseudo Final I, 2 
+140, 4, 8,Pseudo Final II, 3 
+140, 4, 8,Pseudo Final III, 4 
+140, 4, 8,Pseudo Final IV, 0
 140, 4, 16,CORO, 5 
-140, 4, 2 ,Post - CORO, 5 
+140, 4, 2 ,Post - CORO, 2 
 140, 4, 4,CAYENDO, 3 , decrease, 100
 100, 4, 8 ,Solo Guitarra, 0 

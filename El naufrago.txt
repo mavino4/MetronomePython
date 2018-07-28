@@ -1,0 +1,10 @@
+80, 4, 8,INTRO, 1 
+80, 4, 8, Verso I, 2
+80, 4, 4, Puente, 3
+80, 4, 8, Verso II, 0
+80, 4, 4, Verso + , 3
+80, 4, 8, Transición , 5, acelerate, 100
+100 , 4, 8 , Outro I , 0
+100 , 4, 8 , Outro II , 1
+100 , 4, 8 , Outro III , 2
+100 , 4, 8 , Outro IV , 3
