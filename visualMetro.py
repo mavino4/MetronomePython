@@ -44,7 +44,6 @@ class Metronome():
         window.fill(paleta[self.color])
         texto = miFuente.render(self.name, 0, (0,0,0))
         window.blit(texto,(100,100))
-        #pygame.draw.rect(window, (255,255,255), (0,10, 50,100))
         pygame.display.update()
         for beat in range(self.loops):
             for i in range(self.time_sig):
@@ -60,7 +59,6 @@ class Metronome():
         window.fill(paleta[self.color])
         texto = miFuente.render(self.name, 0, (0,0,0))
         window.blit(texto,(100,100))
-        #pygame.draw.rect(window, (255,255,255), (0,10, 50,100))
         pygame.display.update()
         for beat in range(self.loops):
             for i in range(self.time_sig):
@@ -76,7 +74,6 @@ class Metronome():
         window.fill(paleta[self.color])
         texto = miFuente.render(self.name, 0, (0,0,0))
         window.blit(texto,(100,100))
-        #pygame.draw.rect(window, (255,255,255), (0,10, 50,100))
         pygame.display.update()
         for beat in range(self.loops):
             for i in range(self.time_sig):
@@ -92,22 +89,36 @@ class Metronome():
 paleta = [pygame.Color(255, 87, 51), pygame.Color(255, 189, 51), pygame.Color(219, 255, 51) ,pygame.Color(117, 255, 51) ,pygame.Color(51, 255, 87) ,pygame.Color(51, 255, 189)]
 
 
+def cancion(file, li = 1, ls =100):
+    song = open(file, "r")
+    sections = []
+    for section in song:
+        sections.append(section.split(","))
+    
+    # INICIO DEL METRONOMO
+    m = Metronome(int(sections[li-1][0]), int(sections[li-1][1]), 2, "CUENTA REGRESIVA", 0)
+    m.start_metronome()
+
+    try: 
+        for section_i in range(li-1,ls):
+            m = Metronome(int(sections[section_i][0]), int(sections[section_i][1]), int(sections[section_i][2]), sections[section_i][3], int(sections[section_i][4]))
+            if len(sections[section_i]) == 5:
+                m.start_metronome()            
+            else:
+                if sections[section_i][-2] == "decrease":
+                    m.decrease_metronome(int((sections[section_i][-1])))
+                else:
+                    m.acelerate_metronome(int((sections[section_i][-1])))
+    except: 
+        pass
+
+    # FIN DEL METRONOMO
+    m = Metronome(int(sections[ls-1][0]), int(sections[ls-1][1]), 2, "FINAL DEL METRONOMO", 0)
+    m.start_metronome()
 
 
-#Ejecución
 
-
-
-m = Metronome(140, 4, 2, "CUENTA REGRESIVA", 0)
-m.start_metronome()
-m = Metronome(140, 4, 1,"PRIMERA PARTE", 1 )
-m.start_metronome()
-m = Metronome(140, 4, 2,"ACELERANDO", 2 )
-m.acelerate_metronome(180)
-m = Metronome(180, 4, 2,"ARRIBA", 3 )
-m.start_metronome()
-m = Metronome(180, 4, 8,"CAYENDO", 5 )
-m.decrease_metronome(100)
+cancion("test.txt",2,3)
 
 
 """

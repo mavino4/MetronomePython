@@ -1,0 +1,13 @@
+100, 4, 8,INTRO SOLO, 1 
+100, 4, 8,INTRO ACELERANDO, 2 , acelerate, 140
+140, 4, 16,INTRO COMUNAL, 3 
+140, 4, 16,VERSO, 4 
+140, 4, 16,CORO, 5 
+140, 4, 16,PUENTE SOLO, 0 
+140, 4, 16,VERSO, 4 
+140, 4, 16,CORO, 5 
+140, 4, 32,Pseudo Final, 2 
+140, 4, 16,CORO, 5 
+140, 4, 2 ,Post - CORO, 5 
+140, 4, 4,CAYENDO, 3 , decrease, 100
+100, 4, 8 ,Solo Guitarra, 0 
