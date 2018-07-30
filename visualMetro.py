@@ -9,9 +9,25 @@ import select
 import termios
 
 pygame.init()
-window = pygame.display.set_mode((1300,720))
-pygame.display.set_caption("Metronomo de: ")
+window = pygame.display.set_mode((1366,768))
 miFuente = pygame.font.Font(None,200)
+
+def blit_text(surface, text, pos, font, color=pygame.Color('black')):
+    words = [word.split(' ') for word in text.splitlines()]  # 2D array where each row is a list of words.
+    space = font.size(' ')[0]  # The width of a space.
+    max_width, max_height = surface.get_size()
+    x, y = pos
+    for line in words:
+        for word in line:
+            word_surface = font.render(word, 0, color)
+            word_width, word_height = word_surface.get_size()
+            if x + word_width >= max_width:
+                x = pos[0]  # Reset the x.
+                y += word_height  # Start on new row.
+            surface.blit(word_surface, (x, y))
+            x += word_width + space
+        x = pos[0]  # Reset the x.
+        y += word_height  # Start on new row.
 
 class Metronome():
     def __init__(self, bpm, time_sig,loops, name, color):
@@ -38,12 +54,12 @@ class Metronome():
         self.low_data = low.readframes(2048)
 
         print("bpm: {}, time_sig: {}".format(self.bpm, self.time_sig))
+
         return None
 
     def start_metronome(self):
         window.fill(paleta[self.color])
-        texto = miFuente.render(self.name, 0, (0,0,0))
-        window.blit(texto,(100,100))
+        blit_text(window, self.name, (100,280) , miFuente)
         pygame.display.update()
         for beat in range(self.loops):
             for i in range(self.time_sig):
@@ -57,8 +73,7 @@ class Metronome():
         bpm = self.bpm
         steps = (velfin - bpm)/(self.time_sig*self.loops) 
         window.fill(paleta[self.color])
-        texto = miFuente.render(self.name, 0, (0,0,0))
-        window.blit(texto,(100,100))
+        blit_text(window, self.name, (100,280) , miFuente)
         pygame.display.update()
         for beat in range(self.loops):
             for i in range(self.time_sig):
@@ -68,12 +83,12 @@ class Metronome():
                     self.stream.write(self.low_data)
                 time.sleep(60 / bpm)
                 bpm += steps
+
     def decrease_metronome(self, velfin):
         bpm = self.bpm
         steps = (bpm - velfin)/(self.time_sig*self.loops) 
         window.fill(paleta[self.color])
-        texto = miFuente.render(self.name, 0, (0,0,0))
-        window.blit(texto,(100,100))
+        blit_text(window, self.name, (100,280) , miFuente)
         pygame.display.update()
         for beat in range(self.loops):
             for i in range(self.time_sig):
@@ -92,11 +107,12 @@ paleta = [pygame.Color(255, 87, 51), pygame.Color(255, 189, 51), pygame.Color(21
 def cancion(file, li = 1, ls =100):
     song = open(file, "r")
     sections = []
+    pygame.display.set_caption("Metronomo de: " + file)
     for section in song:
         sections.append(section.split(","))
     
     # INICIO DEL METRONOMO
-    m = Metronome(int(sections[li-1][0]), int(sections[li-1][1]), 2, "CUENTA REGRESIVA", 0)
+    m = Metronome(int(sections[li-1][0]), int(sections[li-1][1]), 2, "Cuenta regresiva", 0)
     m.start_metronome()
 
     try: 
@@ -113,13 +129,15 @@ def cancion(file, li = 1, ls =100):
         pass
 
     # FIN DEL METRONOMO
-    m = Metronome(int(sections[ls-1][0]), int(sections[ls-1][1]), 2, "FINAL DEL METRONOMO", 0)
+    m = Metronome(int(sections[ls-1][0]), int(sections[ls-1][1]), 2, "Final del metrónomo", 0)
     m.start_metronome()
 
 
 
 
-cancion("El naufrago.txt",4)
+
+
+cancion("Compo2.txt")
 
 
 """
