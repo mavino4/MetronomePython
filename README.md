@@ -30,16 +30,16 @@ Metronome ( ... , change, FSpeed)
 Un archivo de canción estará compuesto por una o más secciones que cumplan con los parámetros descritos anteriormente, por ejemplo:  
 
 80, 4, 8, Verso II, 0
+
 80, 4, 4, Verso + , 3
+
 80, 4, 8, Transición , 5, acelerate, 100
 
 # Activación del metrónomo 
 
 Para poder utilizar la aplicación debe ejecutar la siguiente orden: 
 
-""" shell
 python3 visualMetro.py file.txt [-s] [-e]
-""" 
 
 donde llamamos a que python3 ejecute el script visualMetro.py con los parámetros: 
 *Parámetro obligatorio*
@@ -52,8 +52,8 @@ file.txt,  que puede ser reemplazado con la ruta del archivo de texto que tenga 
 # Ejemplos : 
 
 python3 visualMetro.py songs/Rodia.txt
+
 python3 visualMetro.py songs/Huevear.txt -s 5 -e 7
 
 
 (c) Uqi Software 2018
-- Mavino 
