@@ -1,14 +1,16 @@
-# new metronome
 import pygame 
 from pygame.locals import * 
 import pyaudio
 import wave
 import time
-import sys
-import select
-import termios
+import argparse
 
 pygame.init()
+
+# Definiendo paleta de colores 
+paleta = [pygame.Color(255, 87, 51), pygame.Color(255, 189, 51), pygame.Color(219, 255, 51) ,pygame.Color(117, 255, 51) ,pygame.Color(51, 255, 87) ,pygame.Color(51, 255, 189)]
+
+# Definiendo la pantalla
 window = pygame.display.set_mode((1366,768))
 miFuente = pygame.font.Font(None,200)
 
@@ -100,10 +102,6 @@ class Metronome():
                 bpm -= steps   	
 
 
-# Definiendo paleta de colores 
-paleta = [pygame.Color(255, 87, 51), pygame.Color(255, 189, 51), pygame.Color(219, 255, 51) ,pygame.Color(117, 255, 51) ,pygame.Color(51, 255, 87) ,pygame.Color(51, 255, 189)]
-
-
 def cancion(file, li = 1, ls =100):
     song = open(file, "r")
     sections = []
@@ -129,15 +127,23 @@ def cancion(file, li = 1, ls =100):
         pass
 
     # FIN DEL METRONOMO
-    m = Metronome(int(sections[ls-1][0]), int(sections[ls-1][1]), 2, "Final del metrónomo", 0)
+    m = Metronome(int(sections[ls-1][0]), int(sections[ls-1][1]), 1, "Final del metrónomo", 0)
     m.start_metronome()
 
 
+parser = argparse.ArgumentParser()
+parser.add_argument("file", help="select the file of the song",
+                    type=str)
+parser.add_argument("-s", "--start", help="select the section where start the metronome",
+                    type=int, default= 1)
+parser.add_argument("-e", "--end", help="select the section where the metronome end",
+                    type=int, default = 100)
 
+args = parser.parse_args()
 
+### Ejecutando la canción 
+cancion(args.file, args.start, args.end)
 
-
-cancion("Compo2.txt")
 
 
 """
