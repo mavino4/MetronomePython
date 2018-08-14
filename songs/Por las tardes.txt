@@ -1,0 +1,9 @@
+170, 4, 16, Intro, 1
+170, 4, 16, Verso I, 2
+170, 4, 16, Verso II, 3
+170, 4, 16, CORO, 4
+170, 4, 16, PUENTE SOLO, 5
+170, 4, 8, Verso I, 2
+170, 4, 8, Verso II, 3
+170, 4, 16, CORO, 0
+170, 4, 16, Final, 1
