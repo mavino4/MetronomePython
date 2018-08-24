@@ -6,4 +6,10 @@
 170, 4, 8, Verso I, 2
 170, 4, 8, Verso II, 3
 170, 4, 16, CORO, 0
-170, 4, 16, Final, 1
+170, 4, 16, CORO, 2
+170, 4, 4, Final, 1 , decrease, 120
+120, 4, 16, Final, 1
+120, 4, 16, Final, 1
+120, 4, 16, Final, 1
+120, 4, 16, Final, 1
+120, 4, 16, Final, 1

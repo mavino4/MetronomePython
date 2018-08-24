@@ -99,7 +99,8 @@ class Metronome():
                 else:
                     self.stream.write(self.low_data)
                 time.sleep(60 / bpm)
-                bpm -= steps   	
+                bpm -= steps
+                print(bpm)   	
 
 
 def cancion(file, li = 1, ls =100):
