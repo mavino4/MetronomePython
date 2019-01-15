@@ -1,17 +1,18 @@
-180, 4, 8, INTRO I.1, 2
-180, 4, 8, INTRO I.2, 2
-180, 4, 8, INTRO II, 2
-180, 4 , 16, VERSO, 3
-180, 4 , 16, CORO, 3
-125, 6 , 8, Puente, 3
-180, 4, 8, INTRO I.2, 2
-180, 4, 8, INTRO II, 2
-180, 4 , 8, VERSO, 3
-180, 4 , 8, VERSO +, 3
-180, 4 , 16, CORO, 3
-125, 6 , 8, Puente, 3
-130, 4 , 8, Final I, 3
-130, 4 , 8, Final II, 3
-130, 4 , 8, Final III, 3
+170, 4, 8, INTRO I, 2
+170, 4, 8, INTRO II, 2
+170, 4 , 16, VERSO, 3
+170, 4 , 16, CORO, 0
+135, 6 , 8, Puente, 5
+170, 4, 4, INTRO I, 2
+170, 4, 4, INTRO II, 1
+170, 4 , 8, VERSO, 2
+170, 4 , 8, VERSO +, 3
+170, 4 , 16, CORO, 4
+135, 6 , 6, Puente, 5
+130, 4 , 2, Puente 2, 1
+130, 4 , 8, Final I, 0
+130, 4 , 8, Final II, 1
+130, 4 , 8, Final III, 2
 130, 4 , 8, Final IV, 3
-130, 4 , 8, Outro, 3
+130, 4 , 8, Final V, 4
+130, 4 , 8, Outro, 4

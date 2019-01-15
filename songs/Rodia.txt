@@ -2,7 +2,7 @@
 150, 4, 16,VERSO, 1
 150, 4, 16,CORO , 2
 150, 15, 3, PUENTE 44-43, 3
-150, 8, 1, PUENTE 44, 5
+150, 4, 2, PUENTE 44, 5
 150, 7, 3, PUENTE 43, 4
 150, 4, 2, PUENTE AL VERSO, 5, decrease, 140
 140, 4, 16, VERSO SUAVESON, 1 
@@ -16,18 +16,3 @@
 140, 18, 1, Parte Final, 1
 140, 18, 1, Parte Final, 2
 140, 18, 1, Parte Final, 3
-140, 18, 1, Parte Final, 0
-140, 18, 1, Parte Final, 1
-140, 18, 1, Parte Final, 2
-140, 18, 1, Parte Final, 3
-140, 18, 1, Parte Final, 0
-140, 18, 1, Parte Final, 1
-140, 18, 1, Parte Final, 2
-140, 18, 1, Parte Final, 3
-140, 18, 1, Parte Final, 0
-140, 18, 1, Parte Final, 1
-140, 18, 1, Parte Final, 2
-140, 18, 1, Parte Final, 3
-
-
-
